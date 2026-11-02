@@ -137,13 +137,13 @@ Con lo que ya podremos obtener una señal de un muestreo aceptable, permitiéndo
 
 ![OUTPUT 2](./PLOT2.png)
 
-El entendimiento de la frecuencia de muestreo resulta fundamental para el correcto registro de los fenómenos naturales que se quieran registrar a partir de la señal eléctrica de un transductor. Este tema se abordará luego en una segunda instancia en más detalle. Por el momento, seguiremos la regla de utilizar 10 veces más muestras que la frecuencia temporal de la señal que se requiera graficar. En este caso, debido a que $f = 5$ Hz, utilizaremos una frecuencia de muestreo $f_s = 50$ muestras/s, que en el tiempo de un ciclo de oscilacion sinuloidal, en este caso nos dara un $t_{max} = 1/5 = 0.2$ s, representará una cantidad $N = 50/5 = 10$ muestras, obteniendo la siguiente grafica:
+El entendimiento de la frecuencia de muestreo resulta fundamental para el correcto registro de los fenómenos naturales que se quieran registrar a partir de la señal eléctrica de un transductor. Este tema se abordará luego en una segunda instancia en más detalle. Por el momento, seguiremos la regla de utilizar 10 veces más muestras que la frecuencia temporal de la señal que se requiera graficar. En este caso, debido a que $f = 5$ Hz, utilizaremos una frecuencia de muestreo $f_s = 50$ muestras/s, que en el tiempo de un ciclo de oscilación sinusoidal, en este caso nos dará un $t_{max} = 1/5 = 0.2$ s, representará una cantidad $N = 50/5 = 10$ muestras, obteniendo la siguiente gráfica:
 
 ![OUTPUT 3](./PLOT3.png)
 
-Esta regla, como se puede observar, varia la calidad de la senal que queremos simular, y se aplica a su vez a los sistemas que digitalizan senales desde el mundo real. Es importante ser concientes de las limitaciones de los sistemas al momento de registrar los cambios y a su vez de que tan rapido son capaces los sistemas de almacenar o transmitir esta informacion en sus subsistemas. Si estamos registrando una senal a una tasa de 1 Tera muestras por segundo, es probable que el almacenamiento, transporte y visualizacion de las senales se transforme en un proceso invihable y requiera de capacidades de un computador cosotoso a la fecha (2026), sin embargo, si la senal que queremos visualizar contiene componentes de frecuencias principales del orden los kilo Hertz, no es necesario un muestreo tan demandante, y se puede tomar la desicion tanto de realizar un submuestreo, como de realizar la digitalizacion a una menor tasa de muestras por segundo, y es entonces cuando el calculo presentado anteriormente nos permite calcular cual es el limite que podemos alcanzar. Esto permitira procesos mas ligeros y en muchos casos permitira la visualizacion en tiempo real de los procesos de procesamiento digital de senales.
+Esta regla, como se puede observar, varía la calidad de la señal que queremos simular, y se aplica a su vez a los sistemas que digitalizan señales desde el mundo real. Es importante ser conscientes de las limitaciones de los sistemas al momento de registrar los cambios y a su vez de qué tan rápido son capaces los sistemas de almacenar o transmitir esta información en sus subsistemas. Si estamos registrando una señal a una tasa de 1 Tera muestras por segundo, es probable que el almacenamiento, transporte y visualización de las señales se transforme en un proceso inviable y requiera de capacidades de un computador costoso a la fecha (2026), sin embargo, si la señal que queremos visualizar contiene componentes de frecuencias principales del orden los kilo Hertz, no es necesario un muestreo tan demandante, y se puede tomar la decisión tanto de realizar un submuestreo, como de realizar la digitalización a una menor tasa de muestras por segundo, y es entonces cuando el cálculo presentado anteriormente nos permite calcular cuál es el límite que podemos alcanzar. Esto permitirá procesos más ligeros y en muchos casos permitirá la visualización en tiempo real de los procesos de procesamiento digital de señales.
 
-El teorem de Whittaker-Nyquist-Kotelnikov-Shannon-etc, usualmente conocido como el teorema de Nyquist. Harry Nyquist trabajaba en AT&T estudiando sistemas de transmision de informacion en pares de cobre. Basicamente podemos resumir sus estudios mas en relacion a la transmision de informacion en banda base, por lo que nos da el pie para explicar una distincion importante que no se suele hacer al estudiar esta teoria, y es que es importante entender que es lo que deseamos registrar desde nuestra senal, si se trata de una reconstruccion a maxima resolucion de un fenomeno fisico, ya sea una imagen en la mejor resolucion posible, o una senal el en tiempo que tiene informacion valiosa sobre un fenomeno astronomico, etc, quizas lo mejor que se puede hacer es encontrar la manera de registrarla a la mayor tasa de muestreo posible, debido a que luego podemos postprocesarla y estudiarla detalladamente y entender a mayor detalle y estudiando una mayor cantidad de componentes de frecuencia; por el contrario, si lo que queremos es una senal de informacion transmitida a traves de un medio, probablemente nos baste con estudiar, de acuerdo al tipo de modulacion utilizada y a las tecnicas de sincronizacion requeridas, la tasa de sobremuestreo requerida o en ingles "Over Sampling Ratio (OSR)", que para el caso de Nyquist, en una senal sincronizada correspondia a dos veces la frequencia de una senal de dos estados logicos en una comunicacion por par de cobre de ciertas caracteristicas de impedancia. Los estudios de Nyquist se pueden encontrar actualmente en el repositorio de la IEEE.
+El teorema de Whittaker-Nyquist-Kotelnikov-Shannon-etc, usualmente conocido como el teorema de Nyquist. Harry Nyquist trabajaba en AT&T estudiando sistemas de transmisión de información en pares de cobre. Básicamente podemos resumir sus estudios más en relación a la transmisión de información en banda base, por lo que nos da el pie para explicar una distinción importante que no se suele hacer al estudiar esta teoría, y es que es importante entender qué es lo que deseamos registrar desde nuestra señal, si se trata de una reconstrucción a máxima resolución de un fenómeno físico, ya sea una imagen en la mejor resolución posible, o una señal el en tiempo que tiene información valiosa sobre un fenómeno astronómico, etc, quizás lo mejor que se puede hacer es encontrar la manera de registrarla a la mayor tasa de muestreo posible, debido a que luego podemos postprocesarla y estudiarla detalladamente y entender a mayor detalle y estudiando una mayor cantidad de componentes de frecuencia; por el contrario, si lo que queremos es una señal de información transmitida a través de un medio, probablemente nos baste con estudiar, de acuerdo al tipo de modulación utilizada y a las técnicas de sincronización requeridas, la tasa de sobremuestreo requerida o en inglés "Over Sampling Ratio (OSR)", que para el caso de Nyquist, en una señal sincronizada correspondía a dos veces la frecuencia de una señal de dos estados lógicos en una comunicación por par de cobre de ciertas características de impedancia. Los estudios de Nyquist se pueden encontrar actualmente en el repositorio de la IEEE.
 
 [Certain factors affecting telegraph speed](https://ieeexplore.ieee.org/document/6773395)
 
@@ -151,19 +151,19 @@ El teorem de Whittaker-Nyquist-Kotelnikov-Shannon-etc, usualmente conocido como 
 
 Es por esto que el criterio de elegir nuestra tasa de muestreo resulta fundamental.
 
-### Calculo / obtencion de chunks de senal para su visualizacion
+### Cálculo / obtención de chunks de señal para su visualización
 
-Bajo esta perspectiva, realizaremos en python una simulacion que nos permitira visualizar en tiempo real una senal simulada a traves del tiempo y nos dara una vision de como se comportan las senales, especialmente las senales clasicas estudiadas en la electricidad analogica, como lo son las senales sinusoidales, cuadradas, dientes de sierra, etc.
+Bajo esta perspectiva, realizaremos en Python una simulación que nos permitirá visualizar en tiempo real una señal simulada a través del tiempo y nos dará una visión de cómo se comportan las señales, especialmente las señales clásicas estudiadas en la electricidad analógica, como lo son las señales sinusoidales, cuadradas, dientes de sierra, etc.
 
-Debido a que las computadoras funcionan en relacion a estructuras de datos, que almacenan en unidades de memora, lo mas efectivo es trabajar en relacion a estas entidades luego seran transferidas a diferentes entidades e interfaces dedicadas para ser transformadas en imagen o algun tipo de senal de salida que el usuario podra interpretar fuera del computador a traves de alguno de los perifericos o transductores y que se actualizaran constantemente. Dependiendo de los dispositivos utilizados, se requerira el uso de ciertos dimensiones para las estructuras de datos entrantes, los que usualmente son compatibilizados por los programas usualmente llamados "drivers", que compatibilizan el firmware presente el en hardware a utilizar con las interfaces presentes en el dispositivo interconectado.
+Debido a que las computadoras funcionan en relación a estructuras de datos, que almacenan en unidades de memoria, lo más efectivo es trabajar en relación a estas entidades luego serán transferidas a diferentes entidades e interfaces dedicadas para ser transformadas en imagen o algún tipo de señal de salida que el usuario podrá interpretar fuera del computador a través de alguno de los periféricos o transductores y que se actualizarán constantemente. Dependiendo de los dispositivos utilizados, se requerirá el uso de ciertos dimensiones para las estructuras de datos entrantes, los que usualmente son compatibilizados por los programas usualmente llamados "drivers", que compatibilizan el firmware presente el en hardware a utilizar con las interfaces presentes en el dispositivo interconectado.
 
-En el siguiente codigo se presenta una aproximacion a este analisis, en donde la misma senal presentada anteriormente se calcula en relacion a un segmento de tiempo que variara a traves de las iteraciones, calculando solo una seccion de la senal modelada, y estableciendo el largo de la estructura de datos a utilizar. Para esto se utilizara la funcion "animation" de la libreria "Matplotlib", la cual actualizara la ```Fig``` de acuerdo a los parametros de:
-- ```funcion```: La cadena de instrucciones que se ejecutara ciclicamente
-- ```interval```: En tiempo que durara cada frame de la grafica simulada
-- ```blit```: Se pregunta si se puede optimizar el proceso, a veces esto impacta en la grafica, especialmente si se quiere cambiar el tamano de la ventana que contiene a la figura, pero usualmente hace el proceso mas liviano para el computador.
-- ```cache_frame_data```: Guarda los frames producidos por la funcion animacion en la RAM, por lo que el usuario puede usar frames historicos para mostrarlos, por ejemplo, en una pantalla secundaria.
+En el siguiente código se presenta una aproximación a este análisis, en donde la misma señal presentada anteriormente se calcula en relación a un segmento de tiempo que variará a través de las iteraciones, calculando solo una sección de la señal modelada, y estableciendo el largo de la estructura de datos a utilizar. Para esto se utilizará la función "animation" de la librería "Matplotlib", la cual actualizará la ```Fig``` de acuerdo a los parámetros de:
+- ```funcion```: La cadena de instrucciones que se ejecutará cíclicamente
+- ```interval```: En tiempo que durará cada frame de la gráfica simulada
+- ```blit```: Se pregunta si se puede optimizar el proceso, a veces esto impacta en la gráfica, especialmente si se quiere cambiar el tamaño de la ventana que contiene a la figura, pero usualmente hace el proceso más liviano para el computador.
+- ```cache_frame_data```: Guarda los frames producidos por la función animación en la RAM, por lo que el usuario puede usar frames históricos para mostrarlos, por ejemplo, en una pantalla secundaria.
 
-En este caso, como se presenta a continuacion, las dos ultimas funciones descritas no se utilizaran:
+En este caso, como se presenta a continuación, las dos últimas funciones descritas no se utilizarán:
 
 ```python
 ani = FuncAnimation(
@@ -175,7 +175,7 @@ ani = FuncAnimation(
 )
 ```
 
-Siguiendo la estructura ya descrita anteriormente debemos incluir ciertas variables globales de nuestra simulacion para poder realizar el calculo de cada chunk:
+Siguiendo la estructura ya descrita anteriormente debemos incluir ciertas variables globales de nuestra simulación para poder realizar el cálculo de cada chunk:
 
 ```python
 # Intervalo de actualización de la animacion en mili segundos. 
@@ -208,7 +208,7 @@ s_chunks = deque(maxlen=N_Chunk_per_display)
 
 ```
 
-Con estos valores podemos hacer el calculo ciclicamente de la seccion de senal correspondiente a cada chunk y asociarla con la seccion de senal que se graficara en el programa:
+Con estos valores podemos hacer el cálculo cíclicamente de la sección de señal correspondiente a cada chunk y asociarla con la sección de señal que se graficará en el programa:
 
 ```python
 def funcion(frame):
@@ -241,7 +241,7 @@ def funcion(frame):
     return line,
 ```
 
-Todas las acciones concatenadas se presentan en el siguiente codigo:
+Todas las acciones concatenadas se presentan en el siguiente código:
 
 
 ```python
@@ -321,22 +321,22 @@ plt.show()
 
 ```
 
-Al cambiar el valor de $f_s$ de 10 a 100 a 1000, etc; se puede corroborar como el proceso se vuelve mas demandante en recursos para el computador, sin embargo, para la visualizacion de la senal en cuestion, puede resultar ser suficiente. De igual manera, si se esta estudiando una senal de frecuencia de muestreo alta, siempre se cuenta con la posibilidad de graficar una seccion pequena de los datos que permita el estudio de la senal y la grafica, por ejemplo del espectro de frecuencias de fourier a traves del tiempo en un rango de frecuencias suficiente, ejecuntando una visualizacion fluida en el sistema utilizado, pero que no correspondera a la velocidad real de la senal registrada, sin embargo permitira visualizar un fenomeno particular a una escala de tiempo perceptible por el usuario.
+Al cambiar el valor de $f_s$ de 10 a 100 a 1000, etc; se puede corroborar cómo el proceso se vuelve más demandante en recursos para el computador, sin embargo, para la visualización de la señal en cuestión, puede resultar ser suficiente. De igual manera, si se está estudiando una señal de frecuencia de muestreo alta, siempre se cuenta con la posibilidad de graficar una sección pequeña de los datos que permita el estudio de la señal y la gráfica, por ejemplo del espectro de frecuencias de Fourier a través del tiempo en un rango de frecuencias suficiente, ejecutando una visualización fluida en el sistema utilizado, pero que no corresponderá a la velocidad real de la señal registrada, sin embargo permitirá visualizar un fenómeno particular a una escala de tiempo perceptible por el usuario.
 
 
-## Senales en el dominio de la frecuencia
+## Señales en el dominio de la frecuencia
 
-Un analisis comun dentro de nuestra area es la transformada de Fourier, este tema sera abordado con mas detalle en otra publicacion, sin embargo la utilizacion de esta herramienta resulta fundamental para el entendimiento de tecnicas del area de las telecomunicaciones, tales como la modulacion, filtrado, interferencia, etc. Para la implementacion de la teoria de Fourier en dispositivos que han registrado las senales electricas ya en el dominio discreto se presenta la transformada rapida o "Fast Fourier Transform (FFT)" como la implementacion mas utilizada a nivel industrial. A traves de iteraciones, este metodo permite el calculo de la transformada discreta de Fourier o "Discrete Fourier Transform (DFT)", a traves de una serie de operaciones ya optimizadas.
+Un análisis común dentro de nuestra área es la transformada de Fourier, este tema será abordado con más detalle en otra publicación, sin embargo la utilización de esta herramienta resulta fundamental para el entendimiento de técnicas del área de las telecomunicaciones, tales como la modulación, filtrado, interferencia, etc. Para la implementación de la teoría de Fourier en dispositivos que han registrado las señales eléctricas ya en el dominio discreto se presenta la transformada rápida o "Fast Fourier Transform (FFT)" como la implementación más utilizada a nivel industrial. A través de iteraciones, este método permite el cálculo de la transformada discreta de Fourier o "Discrete Fourier Transform (DFT)", a través de una serie de operaciones ya optimizadas.
 
-Para el calculo de las componentes de frecuencias y fase se realiza el siguiente 
+Para el cálculo de las componentes de frecuencias y fase se realiza el siguiente 
 
 $$
 X[ k] = \sum_{n=0}^{N-1}x[n]e^{\frac{-j2\pi kn}{N}}
 $$
 
-donde $N$ es el numero de muestras del chunk, $x[n]$ es el chunk como tal para la muestra $n$, que se vera influenciada por el termino exponenical, el cual es complejo. Este calculo nos dara como resultado un vector en otro espacio muestral $X[k]$ el cual deberemos analizar para obtener las componentes de fase y frequencia.
+donde $N$ es el número de muestras del chunk, $x[n]$ es el chunk como tal para la muestra $n$, que se verá influenciada por el término exponencial, el cual es complejo. Este cálculo nos dará como resultado un vector en otro espacio muestral $X[k]$ el cual deberemos analizar para obtener las componentes de fase y frecuencia.
 
-Para obtener el espectro de magnitudes se calcula el modulo del vector complejo obtenido. En este caso si consideramos que la componente real e imaginaria del valor complejo $X[k]$ son representados por $a_k$ y $b_k$ respectivamente, el calculo del espectro de magnitudes correpondera a:
+Para obtener el espectro de magnitudes se calcula el módulo del vector complejo obtenido. En este caso si consideramos que la componente real e imaginaria del valor complejo $X[k]$ son representados por $a_k$ y $b_k$ respectivamente, el cálculo del espectro de magnitudes corresponderá a:
 
 $$
 FFT_{\mathrm{M}} = |X[k]| = \sqrt{a_k^2+b_k^2}
@@ -354,9 +354,9 @@ $$
 f_k = \frac{kf_s}{N}
 $$
 
-Al realizar estos calculos, nos damos cuenta de que en realidad son solo vectores y operaciones, por lo que para el computador, ya con las funciones optimizadas, no debe ser un calculo demasiado exigente si se realiza sobre un chunk de muestras acotado, sin embargo, como podemos inferir del calculo del espacio de frecuencias asociado, la relacion entre $f_s$ y $N$ dictara el valore de $f_\mathrm{max}$ que podamos obtener, indiferente de $t_\mathrm{max}$ en nuestro experimento o simulacion.
+Al realizar estos cálculos, nos damos cuenta de que en realidad son solo vectores y operaciones, por lo que para el computador, ya con las funciones optimizadas, no debe ser un cálculo demasiado exigente si se realiza sobre un chunk de muestras acotado, sin embargo, como podemos inferir del cálculo del espacio de frecuencias asociado, la relación entre $f_s$ y $N$ dictará el valor de $f_\mathrm{max}$ que podamos obtener, indiferente de $t_\mathrm{max}$ en nuestro experimento o simulación.
 
-A continuacion se presenta un codigo en python para la obtencion de la FFT mediante la utilizacion de las librerias mencionadas anteriormente. La descripcion en detalle de este proceso se realiara en una futura publicacion. Por el momento, al ejecutar este programa, el usuario sera capaz de modificar variables generales como $f_s$ y $N$, asi como otros relacionados a la interfaz de visualizacion, como por ejemplo el tiempo de refresco de la pantalla.
+A continuación se presenta un código en Python para la obtención de la FFT mediante la utilización de las librerías mencionadas anteriormente. La descripción en detalle de este proceso, así como el impacto de la cuantización sobre el proceso descrito, se realizarán en una futura publicación. Por el momento, al ejecutar este programa, el usuario será capaz de modificar variables generales como $f_s$ y $N$, así como otros relacionados a la interfaz de visualización, como por ejemplo el tiempo de refresco de la pantalla.
 
 
 ```Python
@@ -742,8 +742,8 @@ ani = FuncAnimation(fig, actualizar, init_func=iniciar,
 plt.show()
 ```
 
-Una version en C# del mismo programa, puede encontrarse en el repositorio de GitHub destinado a esta serie de blogs: GITHUB_REPO
+Una versión en C# del mismo programa, puede encontrarse en el repositorio de GitHub destinado a esta serie de blogs: GITHUB_REPO
 
 [GITHUB_REPO](https://github.com/rzamoranoilla/BlogsCIMTT-Usach-RaulZamoranoIllanes.git)
 
-Mediante la exploracion de los parametros el usuario puede entender las limitacionde del algoritmo FFT y del analisis discreto de frecuencias, especialmente cuando la tasa de muestreo cambia a valores no enteros, y se peude observar como la potencia en el analisis de magnitudes puede llegar a concentrarse completamente en ciertos valores de frecuencias al coincidir los valores de muestreo con los de la frecuencia transmitida en los diferentes tipos de senales permitidos por la interfaz. Esto puede ser decisivo a la hora de detectar componentes de frecuencia y es la base de la optimisacion de la eficiencia espectral en los metodos de comunicaciones, donde los metoodos de sincronizacion resultan muchas veces obligatorios.
+Mediante la exploración de los parámetros el usuario puede entender las limitaciones del algoritmo FFT y del análisis discreto de frecuencias, especialmente cuando la tasa de muestreo cambia a valores no enteros, y se puede observar cómo la potencia en el análisis de magnitudes puede llegar a concentrarse completamente en ciertos valores de frecuencias al coincidir los valores de muestreo con los de la frecuencia transmitida en los diferentes tipos de señales permitidos por la interfaz. Esto puede ser decisivo a la hora de detectar componentes de frecuencia y es la base de la optimización de la eficiencia espectral en los métodos de comunicaciones, donde los métodos de sincronización resultan muchas veces obligatorios. Es importante recalcar nuevamente, que la cuantización no ha sido considerada dentro del análisis expuesto, siendo un factor crucial, especialmente cuando se requiere reducir los requerimientos del dispositivo que realizará el cálculo matematico.
