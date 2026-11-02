@@ -15,18 +15,11 @@ Blog_1/
     FFT maximo).
 
     test.py
-        Version en Python. Dependencias: numpy y matplotlib (no requiere scipy).
+        Version en Python, con el codigo fuente. Dependencias: numpy y
+        matplotlib (no requiere scipy).
         Ejecutar con:  python test.py
 
-    test_c/test.c
-        La misma aplicacion escrita en C, usando solo la API Win32 y GDI
-        (sin librerias externas). Incluye una FFT propia (radix-2 + Bluestein)
-        para cualquier valor de N.
-
-    test_c/build.bat
-        Compila test.c con el compilador de C de Visual Studio (cl.exe) y
-        genera test.exe. Busca Visual Studio automaticamente; basta con
-        ejecutarlo. Con "build.bat selftest" genera una prueba de consola
-        que verifica la FFT contra una DFT directa.
-        Alternativa con gcc (MSYS2 / MinGW):
-            gcc -O2 -municode -mwindows test.c -o test.exe -lcomctl32 -lgdi32 -luser32
+    test.exe
+        La misma aplicacion compilada en C para Windows (64 bits). Usa solo
+        la API Win32 y GDI, por lo que no necesita instalar nada: basta con
+        hacer doble clic. Solo se distribuye el ejecutable, no el codigo fuente.
