@@ -137,7 +137,7 @@ Con lo que ya podremos obtener una señal de un muestreo aceptable, permitiéndo
 
 ![OUTPUT 2](./PLOT2.png)
 
-El entendimiento de la frecuencia de muestreo resulta fundamental para el correcto registro de los fenómenos naturales que se quieran registrar a partir de la señal eléctrica de un transductor. Este tema se abordará luego en una segunda instancia en más detalle. Por el momento, seguiremos la regla de utilizar 10 veces más muestras que la frecuencia temporal de la señal que se requiera graficar. En este caso, debido a que $f = 5$ Hz, utilizaremos una frecuencia de muestreo $f_s = 50$ muestras/s, que en el tiempo de un ciclo de oscilación sinusoidal, en este caso nos dará un $t_{max} = 1/5 = 0.2$ s, representará una cantidad $N = 50/5 = 10$ muestras, obteniendo la siguiente gráfica:
+El entendimiento de la frecuencia de muestreo resulta fundamental para el correcto registro ("acquisition") de los fenómenos naturales que se puedan obtener a partir de la señal eléctrica de un transductor. Este tema se abordará luego en una segunda instancia en más detalle. Por el momento, seguiremos la regla de utilizar 10 veces más muestras que la frecuencia temporal de la señal que se requiera graficar. En este caso, debido a que $f = 5$ Hz, utilizaremos una frecuencia de muestreo $f_s = 50$ muestras/s, que en el tiempo de un ciclo de oscilación sinusoidal, en este caso nos dará un $t_{max} = 1/5 = 0.2$ s, representará una cantidad $N = 50/5 = 10$ muestras, obteniendo la siguiente gráfica:
 
 ![OUTPUT 3](./PLOT3.png)
 
